@@ -1,0 +1,31 @@
+body {
+    font-family: Arial, "Microsoft JhengHei Regular", "FontAwesome", "NotoSansCJKtc-Medium", sans-serif !important;
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.img-content {
+    height: 200px;
+    overflow: hidden;
+}
+
+.card img {
+    transform:scale(1,1);transition: all 1s ease-out;
+}
+
+.card:hover {
+    box-shadow: 0 .125rem .25rem rgba($black, .075);
+    img {
+        transform:scale(1.2,1.2);
+    }
+    transition: 0.1s;
+}
+
+.table-image {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+}
