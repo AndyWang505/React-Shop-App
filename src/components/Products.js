@@ -41,6 +41,7 @@ export default function Products() {
                                 <button type="button" className="btn btn-outline-primary w-100"
                                     onClick={(e) => {
                                         const quantity = parseInt(e.target.previousSibling.value)
+                                        e.target.previousSibling.value = 1;
                                         dispatch({
                                             type: 'ADD_TO_CART',
                                             payload: {
@@ -48,6 +49,7 @@ export default function Products() {
                                                 quantity
                                             }
                                         });
+                                        
                                     }}>
                                     加入購物車
                                 </button>

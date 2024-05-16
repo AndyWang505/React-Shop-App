@@ -13,6 +13,7 @@ export const cartInit = {
 export const cartRuducer = (state, action) => {
   const cartList = [...state.cartList];
   let productState = state.productState;
+  productState === 0 ? productState = 1: productState = state.productState;
   //取得項目索引
   const index = cartList.findIndex((item) => item.id === action.payload.id);
   switch(action.type){
@@ -20,12 +21,13 @@ export const cartRuducer = (state, action) => {
       if(index === -1){
         cartList.push(action.payload);
       }else {
-        cartList[index].quantity += productState;
+        cartList[index].quantity += action.payload.quantity;
         if(cartList[index].quantity > 20){
-          cartList[index].quantity = 1;
+          cartList[index].quantity = 20;
           alert(`${cartList[index].title} 加點數量超過上限！`);
         }
       }
+      
       return {
         ...state,
         cartList,
